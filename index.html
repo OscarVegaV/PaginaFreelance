@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseñador freelancer</title>
+    <link rel="preload" href="css/normalize.css" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,17 +13,19 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header> Contactar
+    <header>
         <h1 class="titulo">Oscar Vega Venegas 
           <span>Freelancer</span>
         </h1>
     </header>
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Sobre Mi</a>
-      <a href="#">Clientes</a>
-      <a href="#">Contacto</a>
-    </nav>
+    <div class="nav_bg">
+      <nav class="navegacion_principal contenedor">
+        <a href="#">Inicio</a>
+        <a href="#">Sobre Mi</a>
+        <a href="#">Clientes</a>
+        <a href="#">Contacto</a>
+      </nav>
+    </div>
     <section>
         <h2 class="titulo">Diseño y Desarrollo Web 
           <span>Freelancer</span>
@@ -77,8 +80,8 @@
           </svg>
           <p>Ducimus, cumque beatae! Possimus, deserunt distinctio ab obcaecati debitis, in porro amet dolores sequi.</p>          
         </section>
-     </main>
-     <section>
+    </main>
+    <section>
        <h2>Contacto</h2>
        <form action="">
         <fieldset>
@@ -102,9 +105,9 @@
           <input type="submit" value="Enviar"></input>          
         </fieldset>
        </form>
-      </section>
-      <footer>
-        <p>Todos los derechos reservados Oscar Vega Venegas Freelancer</p>
-      </footer>
+    </section>
+    <footer>
+      <p>Todos los derechos reservados Oscar Vega Venegas Freelancer</p>
+    </footer>
 </body>
 </html>
