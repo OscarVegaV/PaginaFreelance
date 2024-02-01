@@ -5,6 +5,7 @@
     --secundario:#0097a7;
     --gris:#757575;
 }
+/* Globales */
 html {
     font-size: 62.5% ;
     box-sizing: border-box;/*ayuda con el tema de bordes y tamaños; sigue en el siguiente linea*/
@@ -16,6 +17,25 @@ body {
     font-size: 16px;/*1rem = 10px*/
     font-family: 'Krub', sans-serif;
 }
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto ;
+    /**MARGENES DEL NAVEGADOR A TODOS LOS LADOS**/
+}
+.boton {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  padding: 1rem 3rem ;
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: .5rem;
+  width: 90%;
+  text-align: center;
+}
+/* Tipografia */
 h1 {
     font-size:  3.8rem;
 }
@@ -28,17 +48,14 @@ h3{
 h1, h2, h2, h3 {
     text-align: center;
 }
+/* TItuos */
 .titulo span {
     font-size: 2rem;
 }
 .nav_bg{
     background-color: var(--secundario);
 }
-.contenedor{
-    max-width: 120rem;
-    margin: 0 auto ;
-    /**MARGENES DEL NAVEGADOR A TODOS LOS LADOS**/
-}
+/* Navegacion Principal */
 .navegacion_principal{
     display: flex;
     flex-direction: column;
@@ -56,6 +73,7 @@ h1, h2, h2, h3 {
     background-color: var(--primario);
     color: var(--oscuro);
 }
+/* hero */
 .hero{
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat;
@@ -83,10 +101,13 @@ justify-content: center;
     display: flex;
     align-items: flex-end;
 }
-
+/* Media Quieries */
 @media (min-width:768px){
     .navegacion_principal {
         flex-direction: row;
         justify-content: space-between;
+    }
+    .boton{
+        width: auto;
     }
 }
