@@ -10,6 +10,7 @@
 html{
     font-size: 62.5%; /* esto con el rem ayuda a que todo se normaliza una especie he hack*/
     box-sizing: border-box;/*hack/ayuda con el tema de bordes y tamaños; sigue en el siguiente linea*/
+    scroll-snap-type: y mandatory;/*efecto en el scroll + el otro codigo de abajo*/
 }
 *, *:before, *:after {   /* selecciona todos los elementos (*) este codigo ayuda con el tema de bordes y tamaños*/
     box-sizing: inherit;
@@ -19,6 +20,13 @@ body{
     font-family: 'Krub', sans-serif;
     /* para hacer la pagina con gradiente,(Direccion [de abajo hacia arriba], 1er color y el pocentaje, 2do color y %... */
     background-image: linear-gradient( to top, var(--grisClaro) 0%, var(--blanco) 100%);
+}
+/*scroll snap*/
+.servicios,
+.navegacion_principal,
+.formulario{
+    scroll-snap-align: center; /*este par de lineas ayuda al efecto del scroll hay mas lineas de codigo*/
+    scroll-snap-stop: always;
 }
 .contenedor{
     max-width: 120rem;
@@ -124,11 +132,12 @@ justify-content: center;
 .contenido_hero p{
     color: var(--blanco);
 }
-.ubicacion{
+.contenido_hero .ubicacion{
     display: flex;
     align-items: flex-end;
 }
 /*servicios*/
+
 .servicio{
     display: flex;
     flex-direction: column;
@@ -151,6 +160,7 @@ justify-content: center;
     justify-content: space-evenly;
     align-items: center;
 }
+
 /* -Contacto */
 .formulario{
     background-color: var(--gris);
@@ -191,7 +201,7 @@ justify-content: center;
 .campo textarea{
     height: 20rem;
 }
-main, .contenedor{
+main{
     padding-bottom: 2rem;
 }
 /*footer*/
