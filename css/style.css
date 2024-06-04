@@ -1,5 +1,5 @@
 :root {
-    --blanco: #ffffff;
+    --blanco: #ffffff;/* se le llama custom property*/
     --oscuro: #212121;
     --primario: #ffc107;
     --secundario:#0097a7;
@@ -7,14 +7,14 @@
     --grisClaro:#DFE9F3;
 }
 /* Globales */
-html {
-    font-size: 62.5% ;
-    box-sizing: border-box;/*ayuda con el tema de bordes y tamaños; sigue en el siguiente linea*/
+html{
+    font-size: 62.5%; /* esto con el rem ayuda a que todo se normaliza una especie he hack*/
+    box-sizing: border-box;/*hack/ayuda con el tema de bordes y tamaños; sigue en el siguiente linea*/
 }
-*, *:before, *:after {     /*este codigo ayuda con el tema de bordes y tamaños*/
+*, *:before, *:after {   /* selecciona todos los elementos (*) este codigo ayuda con el tema de bordes y tamaños*/
     box-sizing: inherit;
 }
-body {
+body{
     font-size: 16px;/*1rem = 10px*/
     font-family: 'Krub', sans-serif;
     /* para hacer la pagina con gradiente,(Direccion [de abajo hacia arriba], 1er color y el pocentaje, 2do color y %... */
@@ -22,10 +22,10 @@ body {
 }
 .contenedor{
     max-width: 120rem;
-    margin: 0 auto ;
+    margin: 0 auto ;    
     /**MARGENES DEL NAVEGADOR A TODOS LOS LADOS**/
 }
-.boton {
+.boton{
   background-color: var(--secundario);
   color: var(--blanco);
   padding: 1rem 3rem ;
@@ -37,9 +37,10 @@ body {
   border-radius: .5rem;
   width: 90%;
   text-align: center;
+  border: none;
 }
 .sombra{
-    /* se utiliza con box shadow.com */
+    /* se  cssmatic.com // utiliza con box shadow */
     -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
     box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
     background-color: var(--blanco);
@@ -47,32 +48,45 @@ body {
     padding-top: 2rem;
     border-radius: 1rem;
 }
+.boton:hover{
+    cursor: pointer;
+}
 /* Tipografia */
-h1 {
+h1{
     font-size:  3.8rem;
 }
-h2 {
+h2{
     font-size: 2.8rem;
 }
 h3{
     font-size: 1.8rem;
 }
-h1, h2, h2, h3 {
+h1, h2, h2, h3{
     text-align: center;
 }
 /* TItuos */
-.titulo span {
-    font-size: 2rem;
+.titulo span{
+    font-size: 2rem;/*3.8 rem*/
 }
 .nav_bg{
     background-color: var(--secundario);
+}
+/* Utilidades */
+.w-sm-100{
+    width: 100%;
+}
+.flex{
+display: flex;
+}
+.alinear-derecha{
+    justify-content: flex-end;
 }
 /* Navegacion Principal */
 .navegacion_principal{
     display: flex;
     flex-direction: column;
 }
-.navegacion_principal a {
+.navegacion_principal a{
     display: block;
     text-align: center;
     color: var(--blanco);
@@ -81,7 +95,7 @@ h1, h2, h2, h3 {
     font-weight: 700;
     padding: 1rem;
 }
-.navegacion_principal a:hover {
+.navegacion_principal a:hover{ /*efecto con el raton*/
     background-color: var(--primario);
     color: var(--oscuro);
 }
@@ -89,31 +103,32 @@ h1, h2, h2, h3 {
 .hero{
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; /* para que la img abarq todo*/
     height: 450px;
-    position: relative;
+    position: relative;/* contenido padres*/
     margin-bottom: 2rem;
 }
-.contenido_hero {
-position: absolute;
+.contenido_hero{
+position: absolute; /* contenido hijo*/
 /*background-color: rgba(0, 0, 0, 0, .7); /* Anterior*/
 background-color: rgb(0 0 0 /70%);
 width: 100%;
 height: 100%;
 /*Codigo para alinear vertical o horizontal reutilizable*/
 display: flex;
-flex-direction: column;
+flex-direction: column;/*aliena arriba hacia abajo*/
 align-items: center;
-justify-content: center;
+justify-content: center; 
 }
 .contenido_hero h2,
-.contenido_hero p {
+.contenido_hero p{
     color: var(--blanco);
 }
 .ubicacion{
     display: flex;
     align-items: flex-end;
 }
+/*servicios*/
 .servicio{
     display: flex;
     flex-direction: column;
@@ -121,9 +136,9 @@ justify-content: center;
 }
 .servicio h3{
     color: var(--secundario);
-    font-weight: normal;
+    font-weight: 400;
 }
-.servicio p {
+.servicio p{
     line-height: 2;
     text-align: center;
 }
@@ -136,19 +151,84 @@ justify-content: center;
     justify-content: space-evenly;
     align-items: center;
 }
+/* -Contacto */
+.formulario{
+    background-color: var(--gris);
+    width: min( 60rem, 90% ); /** utilizar el valor mas pequeño; ocupa 2 valores minimos; se ahorra media Quieries**/
+    margin: 0 auto; /*SE UTILIZA POR PORQUE EL PADRE NO TIENE FLEX..*/
+    padding: 2rem;
+    border-radius: 1rem;    
+}
+.formulario fieldset{/* elimina el border por defecto al form*/
+    border: none;
+}
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+/* .contenedor-campos{
+    display: grid;
+} */
+.campo{
+    margin-bottom: 1rem;
+}
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+.campo textarea{
+    height: 20rem;
+}
+main, .contenedor{
+    padding-bottom: 2rem;
+}
+/*footer*/
+.footer{
+    text-align: center;
+}
+
+
 /* Media Quieries */
 @media (min-width:768px){
-    .navegacion_principal {
+    .navegacion_principal{
         flex-direction: row;
         justify-content: space-between;
     }
     .boton{
         width: auto;
     }
-    .servicios {
+    .servicios{
         display: grid;
         /* es lo mismo que poner 33.3%  33.3% 33.3%*/
         grid-template-columns: repeat(3, 1fr);
         column-gap: 1rem; 
     }
+    .w-sm-100{
+        width: auto;
+        margin-top: 3rem;
+    }
+    
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+    /*pseudo select que aplica el cambio a ese "campo" ya que hay mas de una clase con ese nombre*/
+    .campo:nth-child(3),
+    .campo:nth-child(4){
+    grid-column: 1/3;/*hace que el tercer abarque la posicio 1 hasta la 3*/
+}
 }

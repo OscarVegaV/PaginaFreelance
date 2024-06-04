@@ -41,7 +41,7 @@
         </div>
         <a class="boton" href="#">Contactar</a>
       </div>
-    </section>
+    </section><!---hero-->
     <main class="contenedor sombra">
         <h2>Mis Servicios</h2>
         <div class="servicios">
@@ -95,33 +95,37 @@
           <p>Ducimus, cumque beatae! Possimus, deserunt distinctio ab obcaecati debitis, in porro amet dolores sequi.</p>          
         </section>
       </div><!-- servicios -->
+      <section>
+        <h2>Contacto</h2>
+        <form class="formulario">
+          <fieldset>
+            <legend>Contactános Llenando Todos Los Campos</legend>
+            <div class="contenedor-campos">
+              <div class="campo">
+                <label>Nombre</label>
+                <input class="input-text" type="text" placeholder="JUAN VEGA "/>
+              </div>
+              <div class="campo">
+                <label>Teléfono</label>
+                <input class="input-text" type="tel" placeholder="+506 6195 0509"/>
+              </div>
+              <div class="campo">
+                <label>Correo</label>
+                <input class="input-text" type="email" placeholder="CORREO@EJEMPLO.COM"/>
+              </div>
+              <div class="campo">
+                <label>Mensaje</label>
+                <textarea class="input-text"></textarea>
+              </div>
+            </div> <!--contenedor--campos-->
+            <div class="alinear-derecha flex">
+              <input class="boton w-sm-100" type="submit" value="Enviar"></input>          
+            </div>
+          </fieldset>
+        </form>
+      </section>
     </main>
-    <section>
-       <h2>Contacto</h2>
-       <form action="">
-        <fieldset>
-          <legend>Contactános Llenando Todos Los Campos</legend>
-          <div>
-            <label>Nombre</label>
-            <input type="text" placeholder="Tu Nombre"/>
-          </div>
-          <div>
-            <label>Teléfono</label>
-            <input type="tel" placeholder="Tu Teléfono"/>
-          </div>
-          <div>
-            <label>Correo</label>
-            <input type="email" placeholder="Tu Correo"/>
-          </div>
-          <div>
-            <label>Mensaje</label>
-            <textarea placeholder="Describe una descripción"></textarea>
-          </div>
-          <input type="submit" value="Enviar"></input>          
-        </fieldset>
-       </form>
-    </section>
-    <footer>
+    <footer class="footer">
       <p>Todos los derechos reservados Oscar Vega Venegas Freelancer</p>
     </footer>
 </body>
